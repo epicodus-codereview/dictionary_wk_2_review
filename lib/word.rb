@@ -32,4 +32,7 @@ class Word
   define_method(:definitions) do
     @definitions
   end
+  define_method(:word) do
+    @word
+  end
 end

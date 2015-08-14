@@ -55,4 +55,11 @@ describe('Word') do
       expect(test_word.definitions()).to(eq([test_definition]))
     end
   end
+  describe('#word') do
+    it('returns the word') do
+      test_word3 = Word.new('chair')
+      test_word3.save()
+      expect(test_word3.word()).to(eq('chair'))
+    end
+  end
 end

@@ -11,7 +11,6 @@ end
 
 post('/') do
   word = params.fetch('word_input')
-  # part = params.fetch('part')
   new_word = Word.new(word)
   new_word.save()
   @words = Word.all()
