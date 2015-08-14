@@ -1,9 +1,11 @@
-<h1>Your defnitions for your word</h1>
+<h1>Your defnitions for your word.</h1>
 <p>Here you can view your definitions for your word and add more</p>
 
 <% @definitions.each() do |definition| %>
 <ul>
-  <li><strong>Part:</strong> <%= definition.part() %> <strong>Definition:</strong> <%= definition.definition()%></li>
+  <li><strong>Part:</strong> <%= definition.part() %>
+    <br>
+    <strong>Definition:</strong> <%= definition.definition()%></li>
 </ul>
 
 <% end %>

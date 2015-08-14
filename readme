@@ -1,6 +1,13 @@
+NOTE TO TEACHER: If you notice on my app it displays :id followed by the number (ex: localhost:4567/word/:id1). In your feedback, if you find the error quickly. Let me know what I'm doing wrong, I would appreciate that.
+
 Created by Tony Navarro
-
+-------
 Program Name: Custom dictionary
+-------
 Description: Allows the user to add their own words and definitions.
+-------
+Notes about the project:
+  1. Project is at it's basic functionality. At this point no CSS exists. Though it may be applied in future updates.
 
+-------
 NO COPYRIGHT. FREE TO USE BY ALL.
