@@ -1,4 +1,22 @@
 <h1>Your custom dictionary</h1>
+
+
 <p>This is Tony Navarro's Week two review. To use this website you add a word below. and to add a defintion to a specific word, click the word an you'll be sent to the existing definitions and have the ability to add a new defintion. Enjoy</p>
+
+
 <h2>Here is your dictionary list...</h2>
-<a href=''>Click here to add a new word</a>
+<ul>
+  <% @words.each() do |word| %>
+  <li><%= word.description() %></li>
+  <% end %>
+</ul>
+<br>
+<form "/word" method="post">
+  <div class='form-group'>
+    <label for="word">Click here to add add a new word </label>
+    <input id='word_input' name="word_input" type="text">
+  </div>
+  <br>
+  <button type="submit" class="btn_success">Save word</button>
+</form>
+<!-- <a href=''>Click here to add a new word</a> -->
