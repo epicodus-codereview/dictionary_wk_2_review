@@ -13,9 +13,9 @@ class Definition
   define_singleton_method(:clear) do
     @@definitions = []
   end
-  # define_method(:id) do
-  #   @id
-  # end
+  define_method(:id) do
+    @id
+  end
   # define_singleton_method(:find) do |ident|
   #   found_definition = nil
   #   @@definitions.each() do |definition|
