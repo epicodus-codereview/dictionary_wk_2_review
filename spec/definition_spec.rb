@@ -14,11 +14,11 @@ describe('definition') do
       expect(Definition.all()).to(eq([test_definition]))
     end
   end
-  # describe('.clear') do
-  #   it('clears the @@definitions array of all definitions') do
-  #     expect(Definition.clear).to(eq([]))
-  #   end
-  # end
+  describe('.clear') do
+    it('clears the @@definitions array of all definitions') do
+      expect(Definition.clear).to(eq([]))
+    end
+  end
   # describe('#id') do
   #   it('returns a unique id for each definition in @@definitions') do
   #     test_definition = Definition.new('A tent is a portable structure.')
