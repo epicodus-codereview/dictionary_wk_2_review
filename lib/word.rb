@@ -1,8 +1,7 @@
 class Word
   @@words = []
-  define_method(:initialize) do |word, part|
+  define_method(:initialize) do |word|
     @word = word
-    @part = part
     @id = @@words.length().+(1)
     @definitions = []
   end
@@ -26,9 +25,6 @@ class Word
       end
     end
     found_word
-  end
-  define_method(:part) do
-    @part
   end
   define_method(:add_definition) do |definition|
     @definitions.push(definition)

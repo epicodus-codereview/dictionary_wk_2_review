@@ -6,7 +6,6 @@ set(:show_exceptions, false)
 describe('the dictionary path', {:type => :feature}) do
   it('takes the user to the index where a list of words are displayed') do
     visit('/')
-save_and_open_page
     expect(page).to have_content()
   end
 end

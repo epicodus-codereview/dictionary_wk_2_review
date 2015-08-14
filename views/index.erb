@@ -7,9 +7,11 @@
 <h2>Here is your dictionary list...</h2>
 <ul>
   <% @words.each() do |word| %>
-  <li><%= word.description() %></li>
+  <li><a href="/<%= word.id() %>"><%= word.name() %></a></li>
   <% end %>
 </ul>
+
+
 <br>
 <form "/word" method="post">
   <div class='form-group'>

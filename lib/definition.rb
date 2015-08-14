@@ -1,7 +1,8 @@
 class Definition
   @@definitions = []
-  define_method(:initialize) do |definition|
+  define_method(:initialize) do |definition, part|
     @definition = definition
+    @part = part
     @id = @@definitions.length().+(1)
   end
   define_singleton_method(:all) do
@@ -24,5 +25,8 @@ class Definition
       end
     end
     found_definition
+  end
+  define_method(:part) do
+    @part
   end
 end

@@ -9,10 +9,21 @@ get('/') do
   erb(:index)
 end
 
+post('/') do
+  word = params.fetch('word_input')
+  # part = params.fetch('part')
+  new_word = Word.new(word)
+  new_word.save()
+  @words = Word.all()
+  erb(:index)
+end
+
 get('/success') do
   erb(:success)
 end
 
 get('/word') do
-  erb(:)
+  @word = Word.all()
+  @definition = Definition.all()
+  erb(:word_page)
 end

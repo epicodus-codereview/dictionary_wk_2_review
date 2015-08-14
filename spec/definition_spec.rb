@@ -9,7 +9,7 @@ describe('definition') do
   end
   describe('#save') do
     it('saves the definition into the @@definitions array') do
-      test_definition = Definition.new('A tent is a portable structure.')
+      test_definition = Definition.new('A tent is a portable structure.','noun')
       test_definition.save()
       expect(Definition.all()).to(eq([test_definition]))
     end
@@ -21,16 +21,24 @@ describe('definition') do
   end
   describe('#id') do
     it('returns a unique id for each definition in @@definitions') do
-      test_definition = Definition.new('A tent is a portable structure.')
+      test_definition = Definition.new('A tent is a portable structure.', 'noun')
       test_definition.save()
       expect(test_definition.id()).to(eq(1))
     end
   end
   describe('.find') do
     it('finds the definition by its id') do
-      test_definition2 = Definition.new('A tent is a portable structure.')
+      test_definition2 = Definition.new('A tent is a portable structure.', 'noun')
       test_definition2.save()
       expect(Definition.find(test_definition2.id())).to(eq(test_definition2))
+    end
+  end
+  describe('#part') do
+    it('returns what part of the word is. e.g subject, verb, noun etc.') do
+    Definition.clear()
+    test_definition = Definition.new('table', 'noun')
+    test_definition.save()
+    expect(test_definition.part()).to(eq('noun'))
     end
   end
 end
