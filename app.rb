@@ -22,7 +22,6 @@ get('/word/:id') do
   @words = Word.all()
   @definitions = Definition.all
   @definition = Definition.find(params.fetch('id').to_i())
-  # @words = Word.all()
   erb(:word_page)
 end
 
@@ -31,8 +30,6 @@ post('/word/:id') do
   part = params.fetch('part_input')
   new_definition = Definition.new(definition, part)
   new_definition.save
-  # @word = Word.find(params.fetch('word_id').to_i())
-  # @words.add_definition(@definition)
   @definitions = Definition.all()
   erb(:success)
 end

@@ -2,6 +2,7 @@
 <p>Here you can view your definitions for your word and add more</p>
 
 <% @definitions.each() do |definition| %>
+
 <ul>
   <li><strong>Part:</strong> <%= definition.part() %>
     <br>
@@ -10,10 +11,10 @@
 
 <% end %>
 
-
 <form action="/word/:id" method="post">
   <label for="definition_input">New definition</label>
   <input id="definition_input" name="definition_input" type='text'>
+
   <br>
 
   <label for="part">New part (E.g. Verb, subj, noun)</label>

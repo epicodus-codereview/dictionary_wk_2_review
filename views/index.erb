@@ -1,18 +1,20 @@
 <h1>Your custom dictionary</h1>
-
+<br>
 
 <p>This is Tony Navarro's Week two review. To use this website you add a word below. and to add a defintion to a specific word, click the word an you'll be sent to the existing definitions and have the ability to add a new defintion. Enjoy</p>
 
+<br>
 
 <h2>Here is your dictionary list...</h2>
+
 <ul>
   <% @words.each() do |word| %>
   <li><a href="/word/:id<%= word.id() %>"><%= word.word() %></a></li>
   <% end %>
 </ul>
 
-
 <br>
+
 <form "/word" method="post">
   <div class='form-group'>
     <label for="word">Click here to add add a new word </label>
