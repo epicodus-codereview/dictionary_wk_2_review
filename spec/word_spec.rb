@@ -41,4 +41,26 @@ describe('Word') do
     expect(test_word.part()).to(eq('noun'))
     end
   end
+  describe('#add_definition') do
+    it('adds a definition to the @defnitions array') do
+      Word.clear()
+      test_word = Word.new('tent', 'noun')
+      test_word.save()
+      test_definition = Definition.new('A tent is an portable structure.')
+      test_definition.save()
+      test_word.add_definition(test_definition)
+      expect(test_word.definitions()).to(eq([test_definition]))
+    end
+  end
+  describe('#definitions') do
+    it('returns the definition') do
+      Word.clear
+      test_word = Word.new('tent', 'noun')
+      test_word.save()
+      test_definition = Definition.new('A tent is an portable structure.')
+      test_definition.save()
+      test_word.add_definition(test_definition)
+      expect(test_word.definitions()).to(eq([test_definition]))
+    end
+  end
 end
