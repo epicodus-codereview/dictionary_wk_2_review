@@ -26,11 +26,11 @@ describe('definition') do
       expect(test_definition.id()).to(eq(1))
     end
   end
-  # describe('.find') do
-  #   it('finds the definition by its id') do
-  #     test_definition2 = Definition.new('A tent is a portable structure.')
-  #     test_definition2.save()
-  #     expect(Definition.find(test_definition2.id())).to(eq(test_definition2))
-  #   end
-  # end
+  describe('.find') do
+    it('finds the definition by its id') do
+      test_definition2 = Definition.new('A tent is a portable structure.')
+      test_definition2.save()
+      expect(Definition.find(test_definition2.id())).to(eq(test_definition2))
+    end
+  end
 end
