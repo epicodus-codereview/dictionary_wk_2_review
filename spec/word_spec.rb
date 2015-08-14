@@ -19,4 +19,11 @@ describe('Word') do
       expect(Word.clear).to(eq([]))
     end
   end
+  describe('#id') do
+    it('returns a unique id for each word in @@words') do
+      test_word = Word.new('Table')
+      test_word.save()
+      expect(test_word.id()).to(eq(1))
+    end
+  end
 end
