@@ -17,12 +17,22 @@ post('/') do
   erb(:index)
 end
 
-get('/success') do
-  erb(:success)
+get('/word/:id') do
+
+  @words = Word.all()
+  @definitions = Definition.all
+  @definition = Definition.find(params.fetch('id').to_i())
+  # @words = Word.all()
+  erb(:word_page)
 end
 
-get('/word') do
-  @word = Word.all()
-  @definition = Definition.all()
-  erb(:word_page)
+post('/word/:id') do
+  definition = params.fetch('definition_input')
+  part = params.fetch('part_input')
+  new_definition = Definition.new(definition, part)
+  new_definition.save
+  # @word = Word.find(params.fetch('word_id').to_i())
+  # @words.add_definition(@definition)
+  @definitions = Definition.all()
+  erb(:success)
 end

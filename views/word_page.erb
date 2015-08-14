@@ -1,8 +1,23 @@
-<h1>Your defnitions</h1>
-<p>Here you can view your definitions for your word and add more definitons.</p>
+<h1>Your defnitions for your word</h1>
+<p>Here you can view your definitions for your word and add more</p>
 
-<ol>
-  <li></li>
-</ol>
+<% @definitions.each() do |definition| %>
+<ul>
+  <li><strong>Part:</strong> <%= definition.part() %> <strong>Definition:</strong> <%= definition.definition()%></li>
+</ul>
+
+<% end %>
+
+
+<form action="/word/:id" method="post">
+  <label for="definition_input">New definition</label>
+  <input id="definition_input" name="definition_input" type='text'>
+  <br>
+
+  <label for="part">New part (E.g. Verb, subj, noun)</label>
+  <input id='part_input' name="part_input" type="text">
+  <br>
+  <button type="submit">Add defintion and the part</button>
+</form>
 
 <a href="/">Return to home page</a>

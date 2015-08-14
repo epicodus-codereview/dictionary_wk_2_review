@@ -29,4 +29,7 @@ class Definition
   define_method(:part) do
     @part
   end
+  define_method(:definition) do
+    @definition
+  end
 end
