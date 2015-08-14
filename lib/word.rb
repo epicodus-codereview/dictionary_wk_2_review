@@ -1,7 +1,8 @@
 class Word
   @@words = []
-  define_method(:initialize) do |type|
-    @type = type
+  define_method(:initialize) do |word, part|
+    @word = word
+    @part = part
     @id = @@words.length().+(1)
   end
 
@@ -19,12 +20,14 @@ class Word
   end
   define_singleton_method(:find) do |ident|
     found_word = nil
-
     @@words.each() do |word|
       if word.id.eql?(ident)
         found_word = word
       end
     end
     found_word
+  end
+  define_method(:part) do
+    @part
   end
 end
