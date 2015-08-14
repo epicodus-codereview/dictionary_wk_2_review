@@ -26,4 +26,11 @@ describe('Word') do
       expect(test_word.id()).to(eq(1))
     end
   end
+  describe('.find') do
+    it('finds the word by its id') do
+      test_word2 = Word.new('Chair')
+      test_word2.save()
+      expect(Word.find(test_word2.id())).to(eq(test_word2))
+    end
+  end
 end
