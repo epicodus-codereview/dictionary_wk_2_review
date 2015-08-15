@@ -10,6 +10,7 @@ Notes about the project:
 -------
 Known bugs:
   1. URL :id path is displaying incorrectly (EX: localhost:4567/word/:id7). It should display like (localhost:4567/word/7)
+  2. Bug where different words on the index link to the same definitions
 
 -------
 NO COPYRIGHT. FREE TO USE BY ALL.
