@@ -39,7 +39,7 @@ describe('Word') do
       test_word = Word.new('tent')
       test_word.save()
       test_definition = Definition.new('A tent is an portable structure.', 'noun')
-      test_definition.save()
+      # test_definition.save()
       test_word.add_definition(test_definition)
       expect(test_word.definitions()).to(eq([test_definition]))
     end
@@ -50,7 +50,7 @@ describe('Word') do
       test_word = Word.new('tent')
       test_word.save()
       test_definition = Definition.new('A tent is an portable structure.', 'noun')
-      test_definition.save()
+      # test_definition.save()
       test_word.add_definition(test_definition)
       expect(test_word.definitions()).to(eq([test_definition]))
     end

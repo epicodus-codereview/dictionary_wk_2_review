@@ -19,17 +19,19 @@ end
 
 get('/word/:id') do
 
-  @words = Word.all()
-  @definitions = Definition.all
-  @definition = Definition.find(params.fetch('id').to_i())
+  # @words = Word.all() # word_page.erb does not need the list of all words
+  @word = Word.find(params.fetch('id').to_i()) # word_page.erb DOES need the actual word object itself since this is the page to show details on that word and that word's definitions
+  @definitions = @word.definitions() # get list of definitions for this word only
+  # @definition = Definition.find(params.fetch('id').to_i())
   erb(:word_page)
 end
 
-post('/word/:id') do
+post('/definitions') do
   definition = params.fetch('definition_input')
   part = params.fetch('part_input')
   new_definition = Definition.new(definition, part)
-  new_definition.save
-  @definitions = Definition.all()
+  # new_definition.save # for this exercise definitions only need to be added to words, not saved on their own
+  @word = Word.find(params.fetch('word_id').to_i()) # find the right word to add the definition to (based on URL)
+  @word.add_definition(new_definition) # add the definition object to the word object
   erb(:success)
 end

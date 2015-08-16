@@ -1,17 +1,18 @@
-<h1>Your defnitions for your word.</h1>
+<h1>Your defnitions for <%= @word.word() %>.</h1>
 <p>Here you can view your definitions for your word and add more</p>
 
 <% @definitions.each() do |definition| %>
 
-<ul>
-  <li><strong>Part:</strong> <%= definition.part() %>
-    <br>
-    <strong>Definition:</strong> <%= definition.definition()%></li>
-</ul>
+  <ul>
+    <li><strong>Part:</strong> <%= definition.part() %>
+      <br>
+      <strong>Definition:</strong> <%= definition.definition()%></li>
+  </ul>
 
 <% end %>
 
-<form action="/word/:id" method="post">
+<form action="/definitions" method="post">
+  <input type="hidden" name="word_id" value="<%= @word.id() %>">
   <label for="definition_input">New definition</label>
   <input id="definition_input" name="definition_input" type='text'>
 
